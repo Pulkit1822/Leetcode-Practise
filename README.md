@@ -2,8 +2,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/LeetCode-Daily%20Challenge-brightgreen.svg" alt="LeetCode Daily Challenge">
-  <img src="https://img.shields.io/github/languages/top/Pulkit1822/Leetcode" alt="Top Language">
-  <img src="https://img.shields.io/github/last-commit/Pulkit1822/Leetcode" alt="Last Commit">
 </p>
 
 ## Overview
