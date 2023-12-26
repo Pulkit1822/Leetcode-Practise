@@ -42,6 +42,6 @@ int64_t numRollsToTarget(int64_t d, int64_t f, int64_t target) {
   }
   return dp[target];
 }
-} 
+};
 // @lc code=end
 
