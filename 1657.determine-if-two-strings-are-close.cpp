@@ -23,21 +23,27 @@ bool closeStrings(string& word1, string& word2) {
         return false;
     }
 
-    vector<int> freq1(26, 0);
-    vector<int> freq2(26, 0);
+    array<int, 26> count1 = {0};
+    array<int, 26> count2 = {0};
 
     for (char c : word1) {
-        freq1[c - 'a']++;
+        count1[c - 'a']++;
     }
 
     for (char c : word2) {
-        freq2[c - 'a']++;
+        count2[c - 'a']++;
     }
 
-    sort(freq1.begin(), freq1.end());
-    sort(freq2.begin(), freq2.end());
+    for (int i = 0; i < 26; i++) {
+        if ((count1[i] == 0 && count2[i] != 0) || (count1[i] != 0 && count2[i] == 0)) {
+            return false;
+        }
+    }
 
-    return freq1 == freq2;
+    sort(count1.begin(), count1.end());
+    sort(count2.begin(), count2.end());
+
+    return count1 == count2;
 }
 };
 
