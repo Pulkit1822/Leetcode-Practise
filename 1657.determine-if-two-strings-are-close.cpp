@@ -12,7 +12,11 @@
  * @return True if the words are close, false otherwise.
  */
 static bool closeStrings(const std::string& word1, const std::string& word2) {
-    return word1.size() == word2.size() && signature(word1) == signature(word2);
+    if (word1.size() != word2.size()) {
+        return false;
+    }
+
+    return signature(word1) == signature(word2);
 }
 /**
  * Calculates the signature of a word.
