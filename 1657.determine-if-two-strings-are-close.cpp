@@ -22,20 +22,11 @@ static bool closeStrings(const std::string& word1, const std::string& word2) {
  */
 static std::array<int, 26> signature(const std::string& word) {
     std::array<int, 26> freq = {};
+    for (char ch : word) ++freq[ch - 'a'];
     std::array<int, 26> ans = freq;
-    
-    for (char ch : word) {
-        ++freq[ch - 'a'];
-    }
-    
-    std::sort(std::rbegin(freq), std::rend(freq));
-    
-    for (int i = 0, j = 0; i < std::size(ans); ++i) {
-        if (ans[i]) {
-            ans[i] = freq[j++];
-        }
-    }
-    
+    std::sort(std::begin(freq), std::end(freq), std::greater<>());
+    for (int i = 0, j = 0; i < std::size(ans); ++i)
+        if (ans[i]) ans[i] = freq[j++];
     return ans;
 }
 // @lc code=end
