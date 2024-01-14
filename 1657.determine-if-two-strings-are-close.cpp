@@ -4,34 +4,49 @@
  * [1657] Determine if Two Strings Are Close
  */
 
-/**
- * @brief Check if two strings are close.
- * 
- * @param word1 The first word.
- * @param word2 The second word.
- * @return True if the words are close, false otherwise.
- */
-static bool closeStrings(const std::string& word1, const std::string& word2) {
-    if (word1.size() != word2.size()) {
+// @lc code=start
+class Solution {
+public:
+    array<int, 26>&  alpha(const string& word, array<bool, 26>& S){
+        array<int, 26>  A;
+        A.fill(0);
+        for(char c: word){
+            int i=c-'a';
+            S[i]=1;
+            A[i]++;
+        }
+        return A;
+    }
+
+bool closeStrings(string& word1, string& word2) {
+    if (word1.length() != word2.length()) {
         return false;
     }
 
-    return signature(word1) == signature(word2);
+    vector<int> freq1(26, 0);
+    vector<int> freq2(26, 0);
+
+    for (char c : word1) {
+        freq1[c - 'a']++;
+    }
+
+    for (char c : word2) {
+        freq2[c - 'a']++;
+    }
+
+    sort(freq1.begin(), freq1.end());
+    sort(freq2.begin(), freq2.end());
+
+    return freq1 == freq2;
 }
-/**
- * Calculates the signature of a word.
- * 
- * @param word The word to calculate the signature for.
- * @return The signature of the word as an array of integers.
- */
-static std::array<int, 26> signature(const std::string& word) {
-    std::array<int, 26> freq = {};
-    for (char ch : word) ++freq[ch - 'a'];
-    std::array<int, 26> ans = freq;
-    std::sort(std::begin(freq), std::end(freq), std::greater<>());
-    for (int i = 0, j = 0; i < std::size(ans); ++i)
-        if (ans[i]) ans[i] = freq[j++];
-    return ans;
-}
+};
+
+auto init = []()
+{ 
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 'c';
+}();
 // @lc code=end
 
