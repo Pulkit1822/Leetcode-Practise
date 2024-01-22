@@ -36,7 +36,7 @@ std::vector<int> findErrorNums(const std::vector<int>& nums) {
     int duplicate = sum_diff + missing;
 
     return {duplicate , missing};
-}
+} 
 };
 // @lc code=end
 
