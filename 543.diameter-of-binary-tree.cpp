@@ -17,15 +17,14 @@
  */
 class Solution {
 public:
-    // time/space: O(n)/O(h)
     int diameterOfBinaryTree(TreeNode* root) {
-        int diameter = 0;
-        helper(root, diameter);
-        return diameter;
-    }
+    int diameter = 0;
+    helper(root, diameter);
+    return diameter;
+}
 private:
     int helper(TreeNode* node, int& diameter) {
-    if (node == NULL) return 0;
+    if (node == nullptr) return 0;
 
     int left = helper(node->left, diameter);
     int right = helper(node->right, diameter);
