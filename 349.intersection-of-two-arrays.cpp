@@ -10,11 +10,3 @@ public:
     }
 
 };
-
-
-Define a function 'intersection' that takes in two arrays 'nums1' and 'nums2'
-- Create a set 's1' from 'nums1' to store unique elements
-- Create an empty set 'result'
-- Loop through each element 'n' in 'nums2'
-  - If the element exists in 's1', add it to the 'result' set
-- Convert the 'result' set back to a vector and return it
