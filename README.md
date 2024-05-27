@@ -1,4 +1,4 @@
-# LeetCode Daily Challenge Solutions
+# [LeetCode Daily Challenge Solutions](https://github.com/Pulkit1822/Leetcode-Practise)
 
 <p align="center">
   <img src="https://img.shields.io/badge/LeetCode-Daily%20Challenge-brightgreen.svg" alt="LeetCode Daily Challenge">
@@ -40,3 +40,4 @@ Happy learning and coding!
 
 If you find this repository useful, don't forget to star it! ⭐️
 
+### Written by [Pulkit](https://github.com/Pulkit1822)
